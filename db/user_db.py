@@ -1,21 +1,24 @@
-from typing import  Dict
+from typing import  Dict, List
 from pydantic import BaseModel
 
 class UserInDB(BaseModel):
     username: str
     password: str
     balance: int
+    lista : List[str]
 
 database_users = Dict[str, UserInDB]
 
 database_users = {
     "camilo24": UserInDB(**{"username":"camilo24",
                             "password":"root",
-                            "balance":12000}),
+                            "balance":12000,
+                            "lista":["algo"]}),
 
     "andres18": UserInDB(**{"username":"andres18",
                             "password":"hola",
-                            "balance":34000}),
+                            "balance":34000,
+                            "lista":["otro"]}),
 }
 
 def get_user(username: str):

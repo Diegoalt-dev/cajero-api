@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import List
 
 class UserIn(BaseModel):
     username: str
@@ -7,3 +8,4 @@ class UserIn(BaseModel):
 class UserOut(BaseModel):
     username: str
     balance: int
+    lista: List[str]
